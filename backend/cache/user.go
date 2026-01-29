@@ -19,7 +19,7 @@ const (
 )
 
 func GetUsersTotalCount() int64 {
-	val, err := redis.Client.Get(redis.Ctx, userTotalCacheKey).Result()
+	val, err := redis.Client.Get(redis.Ctx, UserTotalCacheKey).Result()
 	if err == nil {
 		if total, err := strconv.ParseInt(val, 10, 64); err == nil {
 			return total
@@ -29,18 +29,18 @@ func GetUsersTotalCount() int64 {
 	var total int64
 	database.DB.Model(&models.User{}).Count(&total)
 
-	redis.Client.Set(redis.Ctx, userTotalCacheKey, strconv.FormatInt(total, 10), cacheTTL)
+	redis.Client.Set(redis.Ctx, UserTotalCacheKey, strconv.FormatInt(total, 10), CacheTTL)
 
 	return total
 }
 
 func InvalidateUserListCache() {
-	redis.Client.Del(redis.Ctx, userTotalCacheKey)
+	redis.Client.Del(redis.Ctx, UserTotalCacheKey)
 
-	keys, err := redis.Client.SMembers(redis.Ctx, userListKeysSet).Result()
+	keys, err := redis.Client.SMembers(redis.Ctx, UserListKeysSet).Result()
 	if err == nil && len(keys) > 0 {
 		redis.Client.Del(redis.Ctx, keys...)
 	}
 
-	redis.Client.Del(redis.Ctx, userListKeysSet)
+	redis.Client.Del(redis.Ctx, UserListKeysSet)
 }
