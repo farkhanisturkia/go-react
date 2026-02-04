@@ -8,12 +8,12 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"go-react/backend/database"
-	"go-react/backend/helpers"
-	"go-react/backend/models"
-	"go-react/backend/pkg/redis"
-	"go-react/backend/structs"
-	"go-react/backend/cache"
+	"go-react-vue/backend/database"
+	"go-react-vue/backend/helpers"
+	"go-react-vue/backend/models"
+	"go-react-vue/backend/pkg/redis"
+	"go-react-vue/backend/structs"
+	"go-react-vue/backend/cache"
 )
 
 const (

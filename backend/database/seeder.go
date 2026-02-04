@@ -5,8 +5,8 @@ import (
 	"log"
 	"time"
 
-	"go-react/backend/models"
-	"go-react/backend/helpers"
+	"go-react-vue/backend/models"
+	"go-react-vue/backend/helpers"
 )
 
 // Seed runs database seeders

@@ -2,10 +2,10 @@ package controllers
 
 import (
 	"net/http"
-	"go-react/backend/database"
-	"go-react/backend/helpers"
-	"go-react/backend/models"
-	"go-react/backend/structs"
+	"go-react-vue/backend/database"
+	"go-react-vue/backend/helpers"
+	"go-react-vue/backend/models"
+	"go-react-vue/backend/structs"
 
 	"github.com/gin-gonic/gin"
 )

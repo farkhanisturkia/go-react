@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"time"
 
-	"go-react/backend/database"
-	"go-react/backend/models"
-	"go-react/backend/pkg/redis"
+	"go-react-vue/backend/database"
+	"go-react-vue/backend/models"
+	"go-react-vue/backend/pkg/redis"
 )
 
 const (

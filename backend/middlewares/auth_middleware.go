@@ -2,7 +2,7 @@ package middlewares
 
 import (
 	"net/http"                        // Untuk membuat response HTTP
-	"go-react/backend/config" // Mengambil konfigurasi dari file .env
+	"go-react-vue/backend/config" // Mengambil konfigurasi dari file .env
 	"strings"                         // Untuk manipulasi string
 
 	"github.com/gin-gonic/gin"     // Framework Gin untuk HTTP routing

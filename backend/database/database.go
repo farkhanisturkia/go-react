@@ -3,8 +3,8 @@ package database
 import (
 	"fmt"
 	"log"
-	"go-react/backend/config"
-	"go-react/backend/models"
+	"go-react-vue/backend/config"
+	"go-react-vue/backend/models"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

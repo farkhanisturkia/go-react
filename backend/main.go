@@ -1,10 +1,10 @@
 package main
 
 import (
-	"go-react/backend/config"
-	"go-react/backend/database"
-	"go-react/backend/pkg/redis"
-	"go-react/backend/routes"
+	"go-react-vue/backend/config"
+	"go-react-vue/backend/database"
+	"go-react-vue/backend/pkg/redis"
+	"go-react-vue/backend/routes"
 )
 
 func main() {

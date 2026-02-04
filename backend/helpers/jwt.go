@@ -1,7 +1,7 @@
 package helpers
 
 import (
-	"go-react/backend/config"
+	"go-react-vue/backend/config"
 	"time"                            
 
 	"github.com/golang-jwt/jwt/v5"

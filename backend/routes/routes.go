@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"go-react/backend/controllers"
-	"go-react/backend/middlewares"
+	"go-react-vue/backend/controllers"
+	"go-react-vue/backend/middlewares"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
