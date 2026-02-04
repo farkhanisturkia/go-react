@@ -46,28 +46,31 @@ export const Login: FC = () => {
             password
         }, {
             onSuccess: (data: any) => {
+                const userData = data.data;
 
-                //set token to cookie
-                Cookies.set('token', data.data.token);
+                if (userData.role?.toLowerCase() === 'admin') {
+                    setErrors({
+                        Error: 'Username or Password is incorrect'
+                    });
+                    return;
+                }
 
-                //set user to cookie
+                Cookies.set('token', userData.token);
                 Cookies.set('user', JSON.stringify({
-                    id: data.data.id,
-                    name: data.data.name,
-                    username: data.data.username,
-                    email: data.data.email
+                    id: userData.id,
+                    name: userData.name,
+                    username: userData.username,
+                    email: userData.email,
+                    role: userData.role
                 }));
 
-                //set isAuthenticated to true
                 setIsAuthenticated(true);
-
-                // Redirect to dashboard page
                 navigate('/admin/dashboard');
             },
             onError: (error: any) => {
-
-                //set errors to state "errors"
-                setErrors(error.response.data.errors);
+                // setErrors(error.response.data.errors);
+                // setErrors(error.response.data.message);
+                setErrors({ Error: 'Username or Password is incorrect' });
             }
         })
     }
@@ -79,7 +82,11 @@ export const Login: FC = () => {
                     <div className="card-body">
                         <h4 className='fw-bold text-center'>LOGIN</h4>
                         <hr />
-                        {errors.Error && <div className="alert alert-danger mt-2 rounded-4">Username or Password is incorrect</div>}
+                        {errors.Error && (
+                            <div className="alert alert-danger mt-2 rounded-4">
+                                {errors.Error}
+                            </div>
+                        )}
                         <form onSubmit={handleLogin}>
                             <div className="form-group mb-3">
                                 <label className="mb-1 fw-bold">Username</label>
