@@ -44,3 +44,10 @@ func InvalidateUserListCache() {
 
 	redis.Client.Del(redis.Ctx, UserListKeysSet)
 }
+
+func InvalidateAllSingleUserCache() {
+    keys, err := redis.Client.Keys(redis.Ctx, UserCachePrefix+"*").Result()
+    if err == nil && len(keys) > 0 {
+        redis.Client.Del(redis.Ctx, keys...)
+    }
+}
