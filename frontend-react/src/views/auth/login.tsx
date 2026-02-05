@@ -68,9 +68,11 @@ export const Login: FC = () => {
                 navigate('/admin/dashboard');
             },
             onError: (error: any) => {
-                // setErrors(error.response.data.errors);
-                // setErrors(error.response.data.message);
-                setErrors({ Error: 'Username or Password is incorrect' });
+                if (error) {
+                    // setErrors(error.response.data.errors);
+                    // setErrors(error.response.data.message);
+                    setErrors({ Error: 'Username or Password is incorrect' });
+                }
             }
         })
     }

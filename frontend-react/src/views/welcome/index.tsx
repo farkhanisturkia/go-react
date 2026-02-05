@@ -102,7 +102,7 @@ const Welcome: FC = () => {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight whitespace-nowrap">
               <span className="text-white">Welcome to </span>
               <span className="animated-text-gradient">
-                MSRooot
+                MSRooot.ID
               </span>
             </h1>
             <p className="text-gray-400 text-xl sm:text-2xl font-light tracking-wide max-w-lg min-h-[3rem] font-mono">
