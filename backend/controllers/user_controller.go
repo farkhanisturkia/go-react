@@ -36,7 +36,7 @@ func FindUsers(c *gin.Context) {
 	}
 
 	offset := (page - 1) * size
-	cacheKey := fmt.Sprintf("%s%d:size:%d:role:user", cache.UserListCachePrefix, page, size)
+	cacheKey := fmt.Sprintf("%s:size:%d:role:user", cache.UserListCachePrefix, page, size)
 
 	val, err := redis.Client.Get(redis.Ctx, cacheKey).Result()
 	if err == nil {
