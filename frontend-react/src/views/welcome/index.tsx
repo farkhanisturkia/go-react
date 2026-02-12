@@ -96,16 +96,16 @@ const Welcome: FC = () => {
         }
       `}</style>
 
-      <div className="min-h-svh w-full bg-gradient-to-br from-black via-gray-950 to-black flex flex-col justify-between px-6 sm:px-12 md:px-16 lg:px-36 relative">
+      <div className="min-h-svh w-full bg-gradient-to-br from-white via-gray-300 to-white dark:from-black dark:via-gray-950 dark:to-black flex flex-col justify-between px-6 sm:px-12 md:px-16 lg:px-36 relative">
         <div className="flex-1 flex items-center">
           <div className="text-left space-y-2 max-w-2xl z-10">
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight whitespace-nowrap">
-              <span className="text-white">Welcome to </span>
+              <span className="text-gray-600 dark:text-white">Welcome to </span>
               <span className="animated-text-gradient">
                 MSRooot.ID
               </span>
             </h1>
-            <p className="text-gray-400 text-xl sm:text-2xl font-light tracking-wide max-w-lg min-h-[3rem] font-mono">
+            <p className="text-gray-600 dark:text-gray-400 text-xl sm:text-2xl font-light tracking-wide max-w-lg min-h-[3rem] font-mono">
               {displayedText}
               <span className="animate-pulse">|</span>
             </p>
@@ -116,7 +116,8 @@ const Welcome: FC = () => {
                   animated-gradient-btn
                   inline-flex items-center justify-center
                   px-10 py-4 text-xl font-semibold
-                  text-gray-300 rounded-full
+                  text-gray-600 hover:text-gray-700 dark:text-gray-300  hover:dark:text-gray-200
+                  rounded-full
                   shadow-lg shadow-yellow-900/20
                   transition-all duration-300
                   hover:shadow-xl hover:shadow-yellow-800/30
